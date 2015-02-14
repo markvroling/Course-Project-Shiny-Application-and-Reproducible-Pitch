@@ -14,9 +14,9 @@ shinyUI(pageWithSidebar(
                      h4(strong("Welcome to my BMI calculator!")),
                      p(h5("To calculate your BMI, please fill in the form on the left. You must enter your weight in kilograms (1 kg = 2.20462262185 lbs)
                           and length in centimeters (1 cm = 0.393700787 inches). Please also fill in your gender and date of birth. ")),
-                     p(h5("After filling in the form you have to push the submit button to calculate your BMI. You can find your BMI
-                          in the tab 'BMI'")),
-                     p(h5("You can find a Histogram in the tab 'Plot' with BMI data of other people. When you have filled in the form, you will se a red line of your BMI.
+                     p(h5("After filling in the form you have to push the submit button to calculate your BMI. You can find your BMI and the BMI formula used
+                          in the tab 'BMI'.")),
+                     p(h5("You can find a Histogram in the tab 'Plot' with BMI data of other people. When you have filled in the form, you will see a red line of your BMI.
                           You are now able to compare your BMI with others. ")   
                          ),
                      p(h5("You can find the data used for the histogram in the last tab.")   
@@ -29,6 +29,10 @@ shinyUI(pageWithSidebar(
                      verbatimTextOutput("weightOutput"),
                      h4('Length entered (CM)'),
                      verbatimTextOutput("lengthOutput"),
+                     h4('Formula used'),
+                     code('calculateBMI <- function(weight, length){
+                         weight / ((length/100)^2)
+                     }'),
                      h4('Your BMI'),
                      verbatimTextOutput("BMI")), 
             tabPanel("Plot", plotOutput("hist")),
