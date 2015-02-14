@@ -21,7 +21,9 @@ shinyUI(pageWithSidebar(
                          ),
                      p(h5("You can find the data used for the histogram in the last tab.")   
                          ),
-                     p(h5("Enjoy the App!"))   
+                     p(h5("Enjoy the App!")   
+                         ),
+                     a("linkt to Github repository",href="https://github.com/markvroling/Course-Project-Shiny-Application-and-Reproducible-Pitch.git")
                          ),
             tabPanel("BMI", 
                      h3('Your scorecard'),

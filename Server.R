@@ -7,7 +7,7 @@ calculateBMI <- function(weight, length){
 
 shinyServer(
     function(input,output){
-        dataBMI <- read.csv("~/testR/dataproducts/BMI.csv", sep=";")
+        dataBMI <- read.csv("BMI.csv", sep=";")
         output$hist <- renderPlot({
             hist(dataBMI$BMI,breaks = 10, xlab = "BMI", main = "")
             value <- calculateBMI(input$weight, input$length)
